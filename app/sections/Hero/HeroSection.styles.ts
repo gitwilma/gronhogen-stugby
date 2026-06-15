@@ -4,51 +4,58 @@ import { spacing } from "@/app/theme/spacing";
 import styled from "styled-components";
 
 export const HeroSectionWrapper = styled.section`
-  min-height: 80vh;
-  padding: ${spacing.xl} 0;
-  background-color: ${colors.background.base};
+  min-height: 560px;
+  padding: ${spacing.huge} 0 ${spacing.xxl};
+  background-color: ${colors.brand.accent};
+  opacity: 0.4;
+
+  @media (max-width: 900px) {
+    min-height: 460px;
+  }
 `;
 
 export const HeroLayout = styled.div`
   display: grid;
-  min-height: 70vh;
+  grid-template-columns: minmax(0, 0.65fr) minmax(0, 1fr);
   align-items: center;
-  gap: ${spacing.xl};
+  gap: ${spacing.xxl};
+  min-height: 420px;
 
-  @media (min-width: 768px) {
-    grid-template-columns: 1.1fr 0.9fr;
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: ${spacing.xl};
   }
 `;
 
 export const HeroContent = styled.header`
-  max-width: 760px;
-`;
-
-export const HeroEyebrow = styled.p`
-  margin: 0 0 ${spacing.md};
-  font-family: var(--font-body);
-  font-size: 14px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: ${colors.text.secondary};
+  max-width: 520px;
 `;
 
 export const HeroTitle = styled.h1`
-  max-width: 720px;
   font-family: var(--font-heading);
-  font-size: clamp(48px, 8vw, 96px);
-  font-weight: 500;
-  line-height: 1;
-  color: ${colors.text.primary};
+  font-size: clamp(48px, 5vw, 72px);
+  font-weight: 600;
+  line-height: 1.15;
+  color: ${colors.text.secondary};
+`;
+
+export const HeroEyebrow = styled.p`
+  margin: ${spacing.md} 0 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #ef7b52;
 `;
 
 export const HeroIntro = styled.p`
-  max-width: 560px;
-  margin: ${spacing.lg} 0 0;
+  max-width: 390px;
+  margin: ${spacing.md} 0 0;
   font-family: var(--font-body);
   font-size: 16px;
-  line-height: 1.7;
-  color: ${colors.text.secondary};
+  line-height: 1.6;
+  color: ${colors.text.primary};
 `;
 
 export const HeroActions = styled.nav`
@@ -60,10 +67,4 @@ export const HeroActions = styled.nav`
 
 export const HeroVisual = styled.figure`
   margin: 0;
-`;
-
-export const HeroImagePlaceholder = styled.div`
-  min-height: 420px;
-  border-radius: ${radius.xl};
-  background-color: ${colors.background.surface};
 `;

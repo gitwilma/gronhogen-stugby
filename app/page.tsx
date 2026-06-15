@@ -1,9 +1,13 @@
+import { Header } from "./components/layout/Header";
 import { HeroSection } from "./sections/Hero/HeroSection";
 
 export default function HomePage() {
   return (
-    <main>
-      <HeroSection />
-    </main>
+    <>
+      <Header />
+      <main>
+        <HeroSection />
+      </main>
+    </>
   );
 }

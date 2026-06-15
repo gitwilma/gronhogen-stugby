@@ -4,43 +4,33 @@ import {
   HeroActions,
   HeroContent,
   HeroEyebrow,
-  HeroImagePlaceholder,
   HeroIntro,
   HeroLayout,
   HeroSectionWrapper,
   HeroTitle,
-  HeroVisual,
 } from "./HeroSection.styles";
 
 export const HeroSection = () => {
   return (
-    <HeroSectionWrapper aria-labelledby="hero-title">
+    <HeroSectionWrapper id="hem" aria-labelledby="hero-title">
       <PageContainer>
         <HeroLayout>
           <HeroContent>
-            <HeroEyebrow>Grönhögen, Öland</HeroEyebrow>
-
             <HeroTitle id="hero-title">
               Bo nära naturen, havet och äventyren.
             </HeroTitle>
 
+            <HeroEyebrow>På södra Öland</HeroEyebrow>
+
             <HeroIntro>
-              En naturnära stugby på södra Öland med närhet till hav, golf,
-              cykelleder och några av öns mest uppskattade utflyktsmål.
+              Grönhögens stugby består av 11 mysiga stugor med närhet till
+              vackra stränder, Långe Jan, golf, cykelleder och mycket mer.
             </HeroIntro>
 
             <HeroActions aria-label="Snabblänkar">
-              <Button href="#stugor">Se våra stugor</Button>
-              <Button href="#kontakt">Kontakta oss</Button>
+              <Button href="#stugor">Våra stugor</Button>
             </HeroActions>
           </HeroContent>
-
-          <HeroVisual>
-            <HeroImagePlaceholder aria-hidden="true" />
-            <figcaption className="sr-only">
-              Bild från Grönhögens Stugby på södra Öland.
-            </figcaption>
-          </HeroVisual>
         </HeroLayout>
       </PageContainer>
     </HeroSectionWrapper>
