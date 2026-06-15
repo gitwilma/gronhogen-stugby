@@ -1,37 +1,67 @@
 import Link from "next/link";
+import type {
+  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
+  ReactNode,
+} from "react";
+import { StyledButton, StyledLinkButton } from "./Button.styles";
 
-type ButtonProps = {
-  children: React.ReactNode;
-  href?: string;
-  external?: boolean;
-  className?: string;
+type ButtonVariant = "primary" | "secondary";
+
+type BaseButtonProps = {
+  children: ReactNode;
+  variant?: ButtonVariant;
 };
 
-export const Button = ({
-  children,
-  href,
-  external = false,
-  className,
-}: ButtonProps) => {
-  const baseClasses =
-    "inline-flex min-h-11 items-center justify-center rounded-full border border-black px-5 py-2 text-sm font-medium transition hover:bg-black hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black";
+type ButtonAsLinkProps = BaseButtonProps &
+  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> & {
+    href: string;
+    external?: boolean;
+  };
 
-  if (href) {
+type ButtonAsButtonProps = BaseButtonProps &
+  ButtonHTMLAttributes<HTMLButtonElement> & {
+    href?: undefined;
+    external?: never;
+  };
+
+type ButtonProps = ButtonAsLinkProps | ButtonAsButtonProps;
+
+const isLinkButton = (props: ButtonProps): props is ButtonAsLinkProps => {
+  return typeof props.href === "string";
+};
+
+export const Button = (props: ButtonProps) => {
+  const { children, variant = "primary" } = props;
+
+  if (isLinkButton(props)) {
+    const { href, external, target, rel, variant, children, ...linkProps } =
+      props;
+
     return (
-      <Link
+      <StyledLinkButton
+        as={Link}
         href={href}
-        className={`${baseClasses} ${className ?? ""}`}
-        target={external ? "_blank" : undefined}
-        rel={external ? "noopener noreferrer" : undefined}
+        variant={variant ?? "primary"}
+        target={external ? "_blank" : target}
+        rel={external ? "noopener noreferrer" : rel}
+        {...linkProps}
       >
         {children}
-      </Link>
+      </StyledLinkButton>
     );
   }
 
+  const {
+    type = "button",
+    variant: _variant,
+    children: _children,
+    ...buttonProps
+  } = props;
+
   return (
-    <button type="button" className={`${baseClasses} ${className ?? ""}`}>
+    <StyledButton type={type} variant={variant} {...buttonProps}>
       {children}
-    </button>
+    </StyledButton>
   );
 };

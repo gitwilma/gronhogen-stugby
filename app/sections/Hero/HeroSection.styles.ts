@@ -1,5 +1,4 @@
 import { colors } from "@/app/theme/colors";
-import { radius } from "@/app/theme/radius";
 import { spacing } from "@/app/theme/spacing";
 import styled from "styled-components";
 
