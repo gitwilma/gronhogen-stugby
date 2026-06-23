@@ -6,13 +6,13 @@ import {
   HeroEyebrow,
   HeroIntro,
   HeroLayout,
-  HeroSectionWrapper,
   HeroTitle,
 } from "./HeroSection.styles";
+import { SectionContainer } from "@/app/components/layout/SectionContainer";
 
 export const HeroSection = () => {
   return (
-    <HeroSectionWrapper id="hem" aria-labelledby="hero-title">
+    <SectionContainer id="hem" aria-labelledby="hero-title">
       <PageContainer>
         <HeroLayout>
           <HeroContent>
@@ -33,6 +33,6 @@ export const HeroSection = () => {
           </HeroContent>
         </HeroLayout>
       </PageContainer>
-    </HeroSectionWrapper>
+    </SectionContainer>
   );
 };

@@ -2,17 +2,6 @@ import { colors } from "@/app/theme/colors";
 import { spacing } from "@/app/theme/spacing";
 import styled from "styled-components";
 
-export const HeroSectionWrapper = styled.section`
-  min-height: 560px;
-  padding: ${spacing.huge} 0 ${spacing.xxl};
-  background-color: ${colors.brand.accent};
-  opacity: 0.4;
-
-  @media (max-width: 900px) {
-    min-height: 460px;
-  }
-`;
-
 export const HeroLayout = styled.div`
   display: grid;
   grid-template-columns: minmax(0, 0.65fr) minmax(0, 1fr);
