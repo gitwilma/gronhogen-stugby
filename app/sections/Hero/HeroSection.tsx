@@ -1,5 +1,7 @@
 import { PageContainer } from "@/app/components/layout/PageContainer";
+import { SectionContainer } from "@/app/components/layout/SectionContainer";
 import { Button } from "@/app/components/ui/Button";
+import Image from "next/image";
 import {
   HeroActions,
   HeroContent,
@@ -7,8 +9,8 @@ import {
   HeroIntro,
   HeroLayout,
   HeroTitle,
+  HeroVisual,
 } from "./HeroSection.styles";
-import { SectionContainer } from "@/app/components/layout/SectionContainer";
 
 export const HeroSection = () => {
   return (
@@ -31,6 +33,16 @@ export const HeroSection = () => {
               <Button href="#stugor">Våra stugor</Button>
             </HeroActions>
           </HeroContent>
+
+          <HeroVisual>
+            <Image
+              src="/assets/nature/lighthouse_02.jpeg"
+              alt="Långe Jan fyr vid solnedgång på södra Öland"
+              fill
+              priority
+              sizes="(max-width: 900px) 100vw, 55vw"
+            />
+          </HeroVisual>
         </HeroLayout>
       </PageContainer>
     </SectionContainer>

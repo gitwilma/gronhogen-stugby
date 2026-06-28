@@ -29,7 +29,6 @@ export const CottagesSection = () => {
             </li>
           ))}
         </CottagesGrid>
-        <BookingSection />
       </PageContainer>
     </SectionContainer>
   );

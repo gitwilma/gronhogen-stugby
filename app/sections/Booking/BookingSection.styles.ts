@@ -3,14 +3,13 @@ import { colors } from "@/app/theme/colors";
 import { radius } from "@/app/theme/radius";
 import { spacing } from "@/app/theme/spacing";
 
-export const BookingSectionWrapper = styled.section`
+export const BookingCard = styled.article`
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: ${spacing.xl};
 
   padding: ${spacing.xl};
-  margin-top: ${spacing.huge};
 
   background-color: ${colors.background.elevated};
   border-radius: ${radius.lg};

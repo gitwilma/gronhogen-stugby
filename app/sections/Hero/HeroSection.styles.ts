@@ -1,4 +1,5 @@
 import { colors } from "@/app/theme/colors";
+import { radius } from "@/app/theme/radius";
 import { spacing } from "@/app/theme/spacing";
 import styled from "styled-components";
 
@@ -7,7 +8,7 @@ export const HeroLayout = styled.div`
   grid-template-columns: minmax(0, 0.65fr) minmax(0, 1fr);
   align-items: center;
   gap: ${spacing.xxl};
-  min-height: 420px;
+  min-height: 520px;
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
@@ -54,5 +55,18 @@ export const HeroActions = styled.nav`
 `;
 
 export const HeroVisual = styled.figure`
+  position: relative;
+  width: 100%;
+  min-height: 520px;
   margin: 0;
+  overflow: hidden;
+  border-radius: ${radius.lg};
+
+  img {
+    object-fit: cover;
+  }
+
+  @media (max-width: 900px) {
+    min-height: 360px;
+  }
 `;
