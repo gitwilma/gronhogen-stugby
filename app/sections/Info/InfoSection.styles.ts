@@ -91,7 +91,7 @@ export const ContactPanel = styled.article`
   align-items: flex-start;
   gap: ${spacing.md};
   padding-left: ${spacing.xl};
-  border-left: 1px solid ${colors.border.strong};
+  border-left: 1px solid ${colors.border.default};
 
   @media (max-width: 1100px) {
     padding-left: 0;
@@ -161,13 +161,17 @@ export const ContactDetails = styled.div`
   gap: ${spacing.sm};
 `;
 
-export const ImagePlaceholder = styled.div`
+export const ContactImage = styled.figure`
+  position: relative;
   width: 100%;
   min-height: 260px;
-  margin-top: ${spacing.md};
-  border: 6px solid ${colors.border.default};
-  border-radius: ${radius.xl};
-  opacity: 0.45;
+  margin: ${spacing.md} 0 0;
+  overflow: hidden;
+  border-radius: ${radius.lg};
+
+  img {
+    object-fit: cover;
+  }
 
   @media (max-width: 1100px) {
     display: none;

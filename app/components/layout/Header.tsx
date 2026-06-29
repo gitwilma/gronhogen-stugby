@@ -9,6 +9,7 @@ import {
   NavList,
   NavListItem,
 } from "./Header.styles";
+import { siteData } from "@/app/data/site";
 
 const navItems = [
   {
@@ -46,8 +47,8 @@ export const Header = () => {
             ))}
           </NavList>
 
-          <Button href="https://www.airbnb.se/" external>
-            Boka på Airbnb
+          <Button href={siteData.airbnbProfileUrl} external>
+            Till Airbnb
           </Button>
         </NavInner>
       </Nav>

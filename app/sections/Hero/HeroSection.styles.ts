@@ -1,50 +1,69 @@
 import { colors } from "@/app/theme/colors";
-import { radius } from "@/app/theme/radius";
 import { spacing } from "@/app/theme/spacing";
 import styled from "styled-components";
 
-export const HeroLayout = styled.div`
-  display: grid;
-  grid-template-columns: minmax(0, 0.65fr) minmax(0, 1fr);
-  align-items: center;
-  gap: ${spacing.xxl};
-  min-height: 520px;
+export const HeroSectionWrapper = styled.section`
+  position: relative;
+  min-height: calc(100vh - 96px);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background-color: ${colors.background.base};
+`;
 
-  @media (max-width: 900px) {
-    grid-template-columns: 1fr;
-    gap: ${spacing.xl};
+export const HeroMedia = styled.figure`
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  z-index: 0;
+
+  img {
+    object-fit: cover;
+    object-position: center 55%;
   }
 `;
 
-export const HeroContent = styled.header`
-  max-width: 520px;
+export const HeroImage = styled.div`
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
 `;
 
-export const HeroTitle = styled.h1`
-  font-family: var(--font-heading);
-  font-size: clamp(48px, 5vw, 72px);
-  font-weight: 600;
-  line-height: 1.15;
-  color: ${colors.text.secondary};
+export const HeroContent = styled.header`
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  padding: ${spacing.huge} 0 ${spacing.xxl};
+  color: ${colors.text.inverse};
 `;
 
 export const HeroEyebrow = styled.p`
-  margin: ${spacing.md} 0 0;
+  margin: 0 0 ${spacing.md};
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #ef7b52;
+  color: ${colors.brand.editorial};
+`;
+
+export const HeroTitle = styled.h1`
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(48px, 7vw, 96px);
+  font-weight: 600;
+  line-height: 0.95;
+  color: ${colors.text.inverse};
 `;
 
 export const HeroIntro = styled.p`
-  max-width: 390px;
-  margin: ${spacing.md} 0 0;
+  max-width: 520px;
+  margin: ${spacing.lg} 0 0;
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.6;
-  color: ${colors.text.primary};
+  font-size: 17px;
+  line-height: 1.65;
+  color: ${colors.text.inverseMuted};
 `;
 
 export const HeroActions = styled.nav`
@@ -52,21 +71,4 @@ export const HeroActions = styled.nav`
   flex-wrap: wrap;
   gap: ${spacing.sm};
   margin-top: ${spacing.xl};
-`;
-
-export const HeroVisual = styled.figure`
-  position: relative;
-  width: 100%;
-  min-height: 520px;
-  margin: 0;
-  overflow: hidden;
-  border-radius: ${radius.lg};
-
-  img {
-    object-fit: cover;
-  }
-
-  @media (max-width: 900px) {
-    min-height: 360px;
-  }
 `;

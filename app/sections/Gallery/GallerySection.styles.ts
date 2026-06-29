@@ -16,7 +16,7 @@ export const GalleryIntro = styled.header`
     font-weight: 700;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: #ef7b52;
+    color: ${colors.brand.editorial};
   }
 `;
 
@@ -98,4 +98,16 @@ export const GalleryActions = styled.div`
   display: flex;
   justify-content: center;
   margin-top: ${spacing.lg};
+`;
+
+export const GalleryStatus = styled.p`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  border: 0;
+  white-space: nowrap;
 `;

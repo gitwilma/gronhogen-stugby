@@ -1,8 +1,8 @@
 export const colors = {
   background: {
-    base: "##fdf9f6",
+    base: "#FDF9F6",
     surface: "#FFFFFF",
-    elevated: "#f4ebe0",
+    elevated: "#F4EBE0",
     subtle: "#DDD6C8",
   },
 
@@ -10,6 +10,7 @@ export const colors = {
     primary: "#000000",
     secondary: "#4D433D",
     inverse: "#FFFFFF",
+    inverseMuted: "rgba(255,255,255,0.88)",
   },
 
   brand: {
@@ -20,6 +21,7 @@ export const colors = {
     secondaryHover: "#AEB8A4",
 
     accent: "#7A96A8",
+    editorial: "#EF7B52",
   },
 
   border: {

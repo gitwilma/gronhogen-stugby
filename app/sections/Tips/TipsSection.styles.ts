@@ -10,7 +10,7 @@ export const TipsEyebrow = styled.p`
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #ef7b52;
+  color: ${colors.brand.editorial};
 `;
 
 export const TipsTitle = styled.h2`

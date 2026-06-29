@@ -29,7 +29,7 @@ export const OtherAccommodationEyebrow = styled.p`
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #ef7b52;
+  color: ${colors.brand.editorial};
 `;
 
 export const OtherAccommodationTitle = styled.h2`

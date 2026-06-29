@@ -1,4 +1,6 @@
 export const siteData = {
+  airbnbProfileUrl: "https://www.airbnb.se/users/profile/1469824043220471997",
+
   phone: "070 000 00 00",
 
   email: "info@gronhogensstugby.se",

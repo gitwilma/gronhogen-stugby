@@ -8,37 +8,37 @@ export type GalleryImage = {
 export const galleryImages: GalleryImage[] = [
   {
     id: "lighthouse-sunset",
-    src: "/images/gallery/lighthouse-sunset.jpg",
+    src: "/assets/nature/lighthouse_02.jpeg",
     alt: "Långe Jan i solnedgång",
     variant: "small",
   },
   {
     id: "bird-sky",
-    src: "/images/gallery/bird-sky.jpg",
+    src: "/assets/nature/nature_01.jpeg", 
     alt: "Fågel som flyger mot blå himmel",
     variant: "small",
   },
   {
     id: "lighthouse",
-    src: "/images/gallery/lighthouse.jpg",
+    src: "/assets/nature/lighthouse_01.jpeg",
     alt: "Långe Jan med dramatisk himmel",
     variant: "large",
   },
   {
     id: "bird-sea",
-    src: "/images/gallery/bird-sea.jpg",
+    src: "/assets/nature/nature_02.jpeg",
     alt: "Fågel som flyger över havet",
     variant: "stackedTop",
   },
   {
     id: "landscape-water",
-    src: "/images/gallery/landscape-water.jpg",
+    src: "/assets/nature/nature_03.jpeg",
     alt: "Öländskt landskap med vatten vid solnedgång",
     variant: "stackedBottom",
   },
   {
     id: "bird-post",
-    src: "/images/gallery/bird-post.jpg",
+    src: "/assets/nature/nature_04.jpeg",
     alt: "Fågel som står på en stolpe",
     variant: "tall",
   },

@@ -20,17 +20,19 @@ export const OtherAccommodationSection = () => {
         <OtherAccommodationLayout>
           <OtherAccommodationContent>
             <OtherAccommodationEyebrow>
-              Ett annat boende
+              Lägenhet i Grönhögen
             </OtherAccommodationEyebrow>
 
             <OtherAccommodationTitle id="other-accommodation-title">
-              Vad stugan kallas
+              Fasanhörnet
             </OtherAccommodationTitle>
 
             <OtherAccommodationText>
-              En charmig stuga belägen en kort bit från Grönhögens Stugby.
-              Perfekt för dig som vill bo lite avskilt men ändå nära naturen och
-              havet.
+              En charmig lägenhet i centrala Grönhögen, belägen i en före detta
+              ateljé med lugnt läge och närhet till havet, badplats och
+              golfbana. Med plats för upp till fyra gäster är det ett perfekt
+              boende för dig som vill uppleva södra Ölands natur och avkopplande
+              bymiljö.
             </OtherAccommodationText>
 
             <OtherAccommodationFeatures aria-label="Information om Stuga vid havet">
@@ -38,17 +40,16 @@ export const OtherAccommodationSection = () => {
               <OtherAccommodationFeature>
                 Havsnära läge
               </OtherAccommodationFeature>
-              <OtherAccommodationFeature>Egen tomt</OtherAccommodationFeature>
             </OtherAccommodationFeatures>
 
-            <Button href="https://www.airbnb.se/" external>
+            <Button href="https://www.airbnb.se/rooms/49065189" external>
               Visa på Airbnb
             </Button>
           </OtherAccommodationContent>
 
           <OtherAccommodationImageWrapper>
             <OtherAccommodationImage
-              src="/images/other-accommodation/stuga-vid-havet.jpg"
+              src="/assets/cottages/otherAccommodation.jpeg" // CHANGE IMAGE
               alt="Stuga vid havet i solnedgång nära kusten"
             />
           </OtherAccommodationImageWrapper>

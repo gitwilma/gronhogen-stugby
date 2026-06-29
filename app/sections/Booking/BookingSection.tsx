@@ -8,6 +8,7 @@ import {
   BookingIcon,
   BookingTitle,
 } from "./BookingSection.styles";
+import { siteData } from "@/app/data/site";
 
 export const BookingSection = () => {
   return (
@@ -34,7 +35,7 @@ export const BookingSection = () => {
             </BookingDescription>
           </BookingContent>
 
-          <Button href="https://www.airbnb.se/" external>
+          <Button href={siteData.airbnbProfileUrl} external>
             Till Airbnb
           </Button>
         </BookingCard>
