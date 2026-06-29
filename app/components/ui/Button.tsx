@@ -38,13 +38,27 @@ export const Button = (props: ButtonProps) => {
     const { href, external, target, rel, variant, children, ...linkProps } =
       props;
 
+    if (external) {
+      return (
+        <StyledLinkButton
+          href={href}
+          variant={variant ?? "primary"}
+          target="_blank"
+          rel="noopener noreferrer"
+          {...linkProps}
+        >
+          {children}
+        </StyledLinkButton>
+      );
+    }
+
     return (
       <StyledLinkButton
         as={Link}
         href={href}
         variant={variant ?? "primary"}
-        target={external ? "_blank" : target}
-        rel={external ? "noopener noreferrer" : rel}
+        target={target}
+        rel={rel}
         {...linkProps}
       >
         {children}
@@ -52,12 +66,7 @@ export const Button = (props: ButtonProps) => {
     );
   }
 
-  const {
-    type = "button",
-    variant: _variant,
-    children: _children,
-    ...buttonProps
-  } = props;
+  const { type = "button", ...buttonProps } = props;
 
   return (
     <StyledButton type={type} variant={variant} {...buttonProps}>

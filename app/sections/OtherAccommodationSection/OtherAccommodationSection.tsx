@@ -7,6 +7,8 @@ import {
   OtherAccommodationFeature,
   OtherAccommodationFeatures,
   OtherAccommodationImage,
+  OtherAccommodationImageCaption,
+  OtherAccommodationImageOverlay,
   OtherAccommodationImageWrapper,
   OtherAccommodationLayout,
   OtherAccommodationText,
@@ -35,11 +37,11 @@ export const OtherAccommodationSection = () => {
               bymiljö.
             </OtherAccommodationText>
 
-            <OtherAccommodationFeatures aria-label="Information om Stuga vid havet">
-              <OtherAccommodationFeature>4 bäddar</OtherAccommodationFeature>
-              <OtherAccommodationFeature>
-                Havsnära läge
-              </OtherAccommodationFeature>
+            <OtherAccommodationFeatures aria-label="Fasanhörnet i centrala Grönhögen">
+              <OtherAccommodationFeature>4 gäster</OtherAccommodationFeature>
+              <OtherAccommodationFeature>1 sovrum</OtherAccommodationFeature>
+              <OtherAccommodationFeature>3 sängar</OtherAccommodationFeature>
+              <OtherAccommodationFeature>1,5 badrum</OtherAccommodationFeature>
             </OtherAccommodationFeatures>
 
             <Button href="https://www.airbnb.se/rooms/49065189" external>
@@ -47,12 +49,25 @@ export const OtherAccommodationSection = () => {
             </Button>
           </OtherAccommodationContent>
 
-          <OtherAccommodationImageWrapper>
-            <OtherAccommodationImage
-              src="/assets/cottages/otherAccommodation.jpeg" // CHANGE IMAGE
-              alt="Stuga vid havet i solnedgång nära kusten"
-            />
-          </OtherAccommodationImageWrapper>
+          <div>
+            <OtherAccommodationImageWrapper
+              href="https://www.airbnb.se/rooms/49065189"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Se fler bilder och information om Fasanhörnet på Airbnb"
+            >
+              <OtherAccommodationImage
+                src="/assets/cottages/otherAccommodation.jpeg"
+                alt="Stuga vid havet i solnedgång nära kusten"
+              />
+              <OtherAccommodationImageOverlay aria-hidden="true">
+                Se fler bilder på Airbnb
+              </OtherAccommodationImageOverlay>
+            </OtherAccommodationImageWrapper>
+            <OtherAccommodationImageCaption>
+              Se fler bilder på Airbnb
+            </OtherAccommodationImageCaption>
+          </div>
         </OtherAccommodationLayout>
       </PageContainer>
     </SectionContainer>

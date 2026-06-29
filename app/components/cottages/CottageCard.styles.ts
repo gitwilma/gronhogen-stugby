@@ -1,7 +1,7 @@
-import styled from "styled-components";
 import { colors } from "@/app/theme/colors";
 import { radius } from "@/app/theme/radius";
 import { spacing } from "@/app/theme/spacing";
+import styled from "styled-components";
 
 export const CottageCardArticle = styled.article`
   height: 100%;
@@ -36,6 +36,18 @@ export const CottageCardImageWrapper = styled.a`
   &:focus-visible {
     outline: 3px solid ${colors.focus.ring};
     outline-offset: -3px;
+  }
+
+  @media (max-width: 768px) {
+    &:hover img,
+    &:focus-visible img {
+      transform: none;
+    }
+
+    &:hover span,
+    &:focus-visible span {
+      opacity: 0;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -81,8 +93,27 @@ export const CottageCardImageOverlay = styled.span`
   opacity: 0;
   transition: opacity 220ms ease;
 
+  @media (max-width: 768px) {
+    display: none;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     transition: none;
+  }
+`;
+
+export const CottageCardImageCaption = styled.span`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    margin: ${spacing.xs} ${spacing.xs} ${spacing.none} ${spacing.xs};
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: ${colors.text.secondary};
+    opacity: 0.7;
   }
 `;
 

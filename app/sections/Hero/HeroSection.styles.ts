@@ -28,6 +28,15 @@ export const HeroImage = styled.div`
   inset: 0;
   z-index: 1;
   pointer-events: none;
+
+  @media (max-width: 900px) {
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.4) 40%,
+      rgba(0, 0, 0, 0) 70%
+    );
+  }
 `;
 
 export const HeroContent = styled.header`

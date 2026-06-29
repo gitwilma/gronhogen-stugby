@@ -3,11 +3,13 @@
 import { PageContainer } from "@/app/components/layout/PageContainer";
 import { SectionContainer } from "@/app/components/layout/SectionContainer";
 import { cottageCarouselSlides } from "@/app/data/cottageCarousel";
-import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import {
   Carousel,
   CarouselButton,
+  CarouselGrid,
+  CarouselGridImage,
+  CarouselGridItem,
   CarouselImage,
   CarouselImageFrame,
   CarouselOverlay,
@@ -37,14 +39,8 @@ export const CottageCarouselSection = () => {
         ...cottageCarouselSlides[previousIndex],
         position: "previous" as const,
       },
-      {
-        ...cottageCarouselSlides[activeIndex],
-        position: "active" as const,
-      },
-      {
-        ...cottageCarouselSlides[nextIndex],
-        position: "next" as const,
-      },
+      { ...cottageCarouselSlides[activeIndex], position: "active" as const },
+      { ...cottageCarouselSlides[nextIndex], position: "next" as const },
     ];
   }, [activeIndex, slidesCount]);
 
@@ -112,7 +108,10 @@ export const CottageCarouselSection = () => {
                       }
                     >
                       {!isActive && (
-                        <CarouselOverlay aria-hidden="true">
+                        <CarouselOverlay
+                          aria-hidden="true"
+                          $position={slide.position}
+                        >
                           {isPrevious ? "←" : "→"}
                         </CarouselOverlay>
                       )}
@@ -125,8 +124,8 @@ export const CottageCarouselSection = () => {
                           fill
                           sizes={
                             isActive
-                              ? "(max-width: 900px) 100vw, 64vw"
-                              : "(max-width: 900px) 0vw, 32vw"
+                              ? "(max-width: 900px) 100vw, 62vw"
+                              : "(max-width: 900px) 0vw, 26vw"
                           }
                         />
                       </CarouselImageFrame>
@@ -141,6 +140,18 @@ export const CottageCarouselSection = () => {
             Bild {activeIndex + 1} av {slidesCount}
           </CarouselStatus>
         </Carousel>
+        <CarouselGrid>
+          {cottageCarouselSlides.map((slide) => (
+            <CarouselGridItem key={slide.id}>
+              <CarouselGridImage
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                sizes="(max-width:560px) 100vw, 50vw"
+              />
+            </CarouselGridItem>
+          ))}
+        </CarouselGrid>
       </PageContainer>
     </SectionContainer>
   );

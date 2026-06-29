@@ -1,13 +1,17 @@
-import Image from "next/image";
-import styled, { css } from "styled-components";
 import { colors } from "@/app/theme/colors";
 import { radius } from "@/app/theme/radius";
 import { spacing } from "@/app/theme/spacing";
+import Image from "next/image";
+import styled, { css } from "styled-components";
 
 type SlidePosition = "previous" | "active" | "next";
 
 export const Carousel = styled.div`
   position: relative;
+
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;
 
 export const CarouselViewport = styled.div`
@@ -21,7 +25,7 @@ export const CarouselViewport = styled.div`
 
 export const CarouselTrack = styled.ul`
   display: grid;
-  grid-template-columns: 32% 64% 32%;
+  grid-template-columns: minmax(0, 24%) minmax(0, 52%) minmax(0, 24%);
   align-items: center;
   gap: ${spacing.xl};
 
@@ -29,16 +33,8 @@ export const CarouselTrack = styled.ul`
   padding: 0;
   list-style: none;
 
-  transform: translateX(-18%);
-  transition: transform 500ms ease;
-
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
-    transform: none;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    transition: none;
   }
 `;
 
@@ -48,8 +44,8 @@ const activeSlideStyles = css`
 `;
 
 const sideSlideStyles = css`
-  opacity: 0.62;
-  transform: scale(0.88);
+  opacity: 0.58;
+  transform: scale(0.94);
 `;
 
 export const CarouselSlide = styled.li<{ $position: SlidePosition }>`
@@ -124,20 +120,23 @@ export const CarouselImage = styled(Image)`
   }
 `;
 
-export const CarouselOverlay = styled.span`
+export const CarouselOverlay = styled.span<{ $position: SlidePosition }>`
   position: absolute;
   inset: 0;
   z-index: 2;
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: ${({ $position }) =>
+    $position === "previous" ? "flex-start" : "flex-end"};
+
+  padding-inline: ${spacing.xl};
 
   background-color: rgba(111, 123, 99, 0.36);
   color: ${colors.text.inverse};
 
   font-family: var(--font-heading);
-  font-size: clamp(56px, 7vw, 104px);
+  font-size: clamp(48px, 5vw, 82px);
   line-height: 1;
 
   opacity: 0;
@@ -167,4 +166,30 @@ export const CarouselStatus = styled.p`
   clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
+`;
+
+export const CarouselGrid = styled.div`
+  display: none;
+
+  @media (max-width: 900px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: ${spacing.md};
+  }
+
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+export const CarouselGridItem = styled.figure`
+  position: relative;
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: ${radius.lg};
+`;
+
+export const CarouselGridImage = styled(Image)`
+  object-fit: cover;
 `;

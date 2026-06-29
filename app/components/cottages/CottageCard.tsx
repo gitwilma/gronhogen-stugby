@@ -4,10 +4,10 @@ import {
   CottageCardArticle,
   CottageCardContent,
   CottageCardImage,
+  CottageCardImageCaption,
   CottageCardImageOverlay,
   CottageCardImageWrapper,
   CottageCardMeta,
-  CottageCardMetaIcon,
   CottageCardTitle,
 } from "./CottageCard.styles";
 
@@ -18,17 +18,20 @@ type CottageCardProps = {
 export const CottageCard = ({ cottage }: CottageCardProps) => {
   return (
     <CottageCardArticle aria-labelledby={`${cottage.id}-title`}>
-      <CottageCardImageWrapper
-        href={cottage.airbnbUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`Se fler bilder och information om ${cottage.name} på Airbnb`}
-      >
-        <CottageCardImage src={cottage.imageSrc} alt={cottage.imageAlt} />
-        <CottageCardImageOverlay aria-hidden="true">
-          Fler bilder på Airbnb
-        </CottageCardImageOverlay>
-      </CottageCardImageWrapper>
+      <div>
+        <CottageCardImageWrapper
+          href={cottage.airbnbUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Se fler bilder och information om ${cottage.name} på Airbnb`}
+        >
+          <CottageCardImage src={cottage.imageSrc} alt={cottage.imageAlt} />
+          <CottageCardImageOverlay aria-hidden="true">
+            Fler bilder på Airbnb
+          </CottageCardImageOverlay>
+        </CottageCardImageWrapper>
+        <CottageCardImageCaption>Fler bilder på Airbnb</CottageCardImageCaption>
+      </div>
 
       <CottageCardContent>
         <div>
