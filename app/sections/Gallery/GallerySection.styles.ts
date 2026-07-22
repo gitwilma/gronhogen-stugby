@@ -1,8 +1,9 @@
-import styled from "styled-components";
 import { colors } from "@/app/theme/colors";
 import { radius } from "@/app/theme/radius";
 import { spacing } from "@/app/theme/spacing";
 import type { GalleryImage as GalleryImageType } from "@/app/data/gallery";
+import Image from "next/image";
+import styled from "styled-components";
 
 type GalleryVariant = GalleryImageType["variant"];
 
@@ -46,8 +47,10 @@ export const GalleryGrid = styled.ul`
 `;
 
 export const GalleryImageItem = styled.li<{ $variant: GalleryVariant }>`
+  position: relative;
   overflow: hidden;
   border-radius: ${radius.sm};
+  background-color: ${colors.background.subtle};
 
   ${({ $variant }) => {
     switch ($variant) {
@@ -80,18 +83,12 @@ export const GalleryImageItem = styled.li<{ $variant: GalleryVariant }>`
   @media (max-width: 900px) {
     grid-column: auto;
     grid-row: auto;
+    aspect-ratio: 4 / 3;
   }
 `;
 
-export const GalleryImage = styled.img`
-  display: block;
-  width: 100%;
-  height: 100%;
+export const GalleryImage = styled(Image)`
   object-fit: cover;
-
-  @media (max-width: 900px) {
-    aspect-ratio: 4 / 3;
-  }
 `;
 
 export const GalleryActions = styled.div`

@@ -43,7 +43,12 @@ export const GallerySection = () => {
         <GalleryGrid aria-label="Bildgalleri från naturen runt Grönhögen">
           {visibleImages.map((image) => (
             <GalleryImageItem key={image.id} $variant={image.variant}>
-              <GalleryImage src={image.src} alt={image.alt} />
+              <GalleryImage
+                src={image.src}
+                alt={image.alt}
+                fill
+                sizes="(max-width: 900px) 50vw, 20vw"
+              />
             </GalleryImageItem>
           ))}
         </GalleryGrid>
@@ -52,7 +57,7 @@ export const GallerySection = () => {
           Visar {visibleImages.length} av {galleryImages.length} bilder.
         </GalleryStatus>
 
-        {hasMoreImages ? (
+        {hasMoreImages && (
           <GalleryActions>
             <Button
               type="button"
@@ -62,7 +67,7 @@ export const GallerySection = () => {
               Visa {imagesToLoadCount} fler bilder
             </Button>
           </GalleryActions>
-        ) : null}
+        )}
       </PageContainer>
     </SectionContainer>
   );

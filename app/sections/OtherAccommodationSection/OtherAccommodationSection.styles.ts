@@ -1,6 +1,7 @@
 import { colors } from "@/app/theme/colors";
 import { radius } from "@/app/theme/radius";
 import { spacing } from "@/app/theme/spacing";
+import Image from "next/image";
 import styled from "styled-components";
 
 export const OtherAccommodationLayout = styled.div`
@@ -51,16 +52,23 @@ export const OtherAccommodationText = styled.p`
 
 export const OtherAccommodationFeatures = styled.ul`
   display: flex;
-  flex-direction: column;
-  gap: ${spacing.md};
+  flex-wrap: wrap;
+  gap: ${spacing.sm};
+
   margin: ${spacing.xl} 0;
   padding: 0;
   list-style: none;
 `;
 
 export const OtherAccommodationFeature = styled.li`
+  padding: ${spacing.sm} ${spacing.md};
+
+  border: 1px solid ${colors.border.default};
+  border-radius: ${radius.full};
+  background-color: ${colors.background.surface};
+
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   color: ${colors.text.secondary};
 `;
@@ -109,9 +117,10 @@ export const OtherAccommodationImageWrapper = styled.a`
   }
 `;
 
-export const OtherAccommodationImage = styled.img`
+export const OtherAccommodationImage = styled(Image)`
   display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   transition: transform 450ms ease;

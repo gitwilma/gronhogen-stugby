@@ -2,12 +2,12 @@
 
 import { Button } from "@/app/components/ui/Button";
 import { siteData } from "@/app/data/site";
+import Image from "next/image";
 import { useState } from "react";
 import {
   DesktopAirbnbButton,
   HeaderWrapper,
   LogoLink,
-  LogoPlaceholder,
   MobileAirbnbButton,
   MobileMenu,
   MobileMenuButton,
@@ -40,7 +40,13 @@ export const Header = () => {
       <Nav aria-label="Huvudnavigation">
         <NavInner>
           <LogoLink href="#hem" aria-label="Gå till startsidan">
-            <LogoPlaceholder aria-hidden="true" />
+            <Image
+              src="/assets/gronhogen-logo5.svg"
+              alt="Grönhögens Stugby logotyp"
+              width={100}
+              height={100}
+              priority
+            />
           </LogoLink>
 
           <NavList>

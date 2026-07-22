@@ -17,7 +17,7 @@ export const HeroSection = () => {
     <HeroSectionWrapper id="hem" aria-labelledby="hero-title">
       <HeroMedia>
         <Image
-          src="/assets/nature/lighthouse_02.jpeg"
+          src="/assets/nature/lighthouse-new_02.webp"
           alt="Långe Jan fyr vid solnedgång på södra Öland"
           fill
           priority

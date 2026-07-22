@@ -15,6 +15,8 @@ import {
   OtherAccommodationTitle,
 } from "./OtherAccommodationSection.styles";
 
+const airbnbUrl = "https://www.airbnb.se/rooms/49065189";
+
 export const OtherAccommodationSection = () => {
   return (
     <SectionContainer aria-labelledby="other-accommodation-title">
@@ -37,35 +39,40 @@ export const OtherAccommodationSection = () => {
               bymiljö.
             </OtherAccommodationText>
 
-            <OtherAccommodationFeatures aria-label="Fasanhörnet i centrala Grönhögen">
+            <OtherAccommodationFeatures aria-label="Information om Fasanhörnet">
               <OtherAccommodationFeature>4 gäster</OtherAccommodationFeature>
               <OtherAccommodationFeature>1 sovrum</OtherAccommodationFeature>
               <OtherAccommodationFeature>3 sängar</OtherAccommodationFeature>
               <OtherAccommodationFeature>1,5 badrum</OtherAccommodationFeature>
             </OtherAccommodationFeatures>
 
-            <Button href="https://www.airbnb.se/rooms/49065189" external>
+            <Button href={airbnbUrl} external>
               Visa på Airbnb
             </Button>
           </OtherAccommodationContent>
 
           <div>
             <OtherAccommodationImageWrapper
-              href="https://www.airbnb.se/rooms/49065189"
+              href={airbnbUrl}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Se fler bilder och information om Fasanhörnet på Airbnb"
             >
               <OtherAccommodationImage
-                src="/assets/cottages/otherAccommodation.jpeg"
-                alt="Stuga vid havet i solnedgång nära kusten"
+                src="/assets/cottages/otherAccommodation.webp"
+                alt="Fasanhörnet i centrala Grönhögen"
+                width={1200}
+                height={675}
+                sizes="(max-width: 900px) 100vw, 65vw"
               />
+
               <OtherAccommodationImageOverlay aria-hidden="true">
                 Se fler bilder på Airbnb
               </OtherAccommodationImageOverlay>
             </OtherAccommodationImageWrapper>
+
             <OtherAccommodationImageCaption>
-              Se fler bilder på Airbnb
+              Klicka på bilden för att se fler bilder på Airbnb.
             </OtherAccommodationImageCaption>
           </div>
         </OtherAccommodationLayout>

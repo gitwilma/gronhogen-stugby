@@ -6,11 +6,12 @@ import styled, { css } from "styled-components";
 type ButtonVariant = "primary" | "secondary";
 
 type StyledButtonProps = {
-  variant: ButtonVariant;
+  $variant: ButtonVariant;
 };
 
 const baseButtonStyles = css`
   min-height: 44px;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -26,6 +27,7 @@ const baseButtonStyles = css`
   text-decoration: none;
 
   cursor: pointer;
+
   transition:
     background-color 160ms ease,
     color 160ms ease,
@@ -72,10 +74,10 @@ const variantStyles = {
 
 export const StyledButton = styled.button<StyledButtonProps>`
   ${baseButtonStyles};
-  ${({ variant }) => variantStyles[variant]};
+  ${({ $variant }) => variantStyles[$variant]};
 `;
 
 export const StyledLinkButton = styled.a<StyledButtonProps>`
   ${baseButtonStyles};
-  ${({ variant }) => variantStyles[variant]};
+  ${({ $variant }) => variantStyles[$variant]};
 `;

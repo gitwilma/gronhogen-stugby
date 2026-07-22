@@ -1,6 +1,7 @@
 import { PageContainer } from "@/app/components/layout/PageContainer";
 import { SectionContainer } from "@/app/components/layout/SectionContainer";
 import { Button } from "@/app/components/ui/Button";
+import { siteData } from "@/app/data/site";
 import {
   BookingCard,
   BookingContent,
@@ -8,7 +9,6 @@ import {
   BookingIcon,
   BookingTitle,
 } from "./BookingSection.styles";
-import { siteData } from "@/app/data/site";
 
 export const BookingSection = () => {
   return (
@@ -20,9 +20,12 @@ export const BookingSection = () => {
           </h2>
 
           <BookingIcon
-            src="/assets/Airbnb-Emblem.png"
+            src="/assets/Airbnb-Emblem.webp"
             alt=""
             aria-hidden="true"
+            width={80}
+            height={80}
+            sizes="80px"
           />
 
           <BookingContent>

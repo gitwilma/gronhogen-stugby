@@ -1,6 +1,7 @@
 import { colors } from "@/app/theme/colors";
 import { radius } from "@/app/theme/radius";
 import { spacing } from "@/app/theme/spacing";
+import Image from "next/image";
 import styled from "styled-components";
 
 export const CottageCardArticle = styled.article`
@@ -18,7 +19,9 @@ export const CottageCardArticle = styled.article`
 export const CottageCardImageWrapper = styled.a`
   position: relative;
   display: block;
-  margin: 0;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+
   overflow: hidden;
   background-color: ${colors.background.subtle};
   text-decoration: none;
@@ -58,10 +61,7 @@ export const CottageCardImageWrapper = styled.a`
   }
 `;
 
-export const CottageCardImage = styled.img`
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 3;
+export const CottageCardImage = styled(Image)`
   object-fit: cover;
   transition: transform 450ms ease;
 
@@ -107,7 +107,7 @@ export const CottageCardImageCaption = styled.span`
 
   @media (max-width: 768px) {
     display: block;
-    margin: ${spacing.xs} ${spacing.xs} ${spacing.none} ${spacing.xs};
+    margin: ${spacing.xs} ${spacing.xs} 0;
     font-family: var(--font-body);
     font-size: 13px;
     font-weight: 700;
@@ -139,20 +139,11 @@ export const CottageCardTitle = styled.h3`
 `;
 
 export const CottageCardMeta = styled.p`
-  display: inline-flex;
-  align-items: center;
-  gap: ${spacing.xs};
-
   margin: ${spacing.xs} 0 0;
 
   font-family: var(--font-body);
   font-size: 15px;
   font-weight: 700;
+  line-height: 1.45;
   color: ${colors.text.secondary};
-`;
-
-export const CottageCardMetaIcon = styled.span`
-  font-size: 10px;
-  line-height: 1;
-  color: ${colors.brand.primary};
 `;

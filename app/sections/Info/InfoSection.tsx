@@ -92,7 +92,7 @@ export const InfoSection = () => {
 
             <ContactImage>
               <Image
-                src="/assets/nature/nature_01.jpeg"
+                src="/assets/nature/nature_01.webp"
                 alt="Natur i närheten av Grönhögens Stugby på södra Öland"
                 fill
                 sizes="(max-width: 1100px) 100vw, 320px"

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { colors } from "@/app/theme/colors";
 import { radius } from "@/app/theme/radius";
 import { spacing } from "@/app/theme/spacing";
+import Image from "next/image";
 
 export const BookingCard = styled.article`
   display: grid;
@@ -20,10 +21,11 @@ export const BookingCard = styled.article`
   }
 `;
 
-export const BookingIcon = styled.img`
+export const BookingIcon = styled(Image)`
   width: 80px;
   height: 80px;
   object-fit: contain;
+  flex-shrink: 0;
 
   @media (max-width: 768px) {
     margin: 0 auto;
@@ -31,6 +33,8 @@ export const BookingIcon = styled.img`
 `;
 
 export const BookingContent = styled.div`
+  min-width: 0;
+
   display: flex;
   flex-direction: column;
   gap: ${spacing.xs};

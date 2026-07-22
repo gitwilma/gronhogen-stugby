@@ -19,7 +19,7 @@ export const HeroMedia = styled.figure`
 
   img {
     object-fit: cover;
-    object-position: center 55%;
+    object-position: center 80%;
   }
 `;
 
