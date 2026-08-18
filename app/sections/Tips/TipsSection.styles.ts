@@ -1,7 +1,7 @@
-import styled from "styled-components";
 import { colors } from "@/app/theme/colors";
 import { radius } from "@/app/theme/radius";
 import { spacing } from "@/app/theme/spacing";
+import styled from "styled-components";
 
 export const TipsEyebrow = styled.p`
   margin: 0 0 ${spacing.sm};
@@ -24,17 +24,17 @@ export const TipsTitle = styled.h2`
 
 export const TipsGrid = styled.ul`
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: ${spacing.xl};
   margin: 0;
   padding: 0;
   list-style: none;
 
-  @media (max-width: 1200px) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 600px) {
     grid-template-columns: 1fr;
   }
 `;

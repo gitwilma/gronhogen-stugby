@@ -36,7 +36,7 @@ export const GallerySection = () => {
     <SectionContainer aria-labelledby="gallery-title">
       <PageContainer>
         <GalleryIntro>
-          <p>Bilder från Björn Fåglar Fyr</p>
+          <p>Underbar omgivning</p>
           <GalleryTitle id="gallery-title">Naturen runt knuten</GalleryTitle>
         </GalleryIntro>
 

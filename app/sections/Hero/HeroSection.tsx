@@ -41,7 +41,7 @@ export const HeroSection = () => {
           </HeroIntro>
 
           <HeroActions aria-label="Snabblänkar">
-            <Button href="#stugor">Våra stugor</Button>
+            <Button href="#stugor">Våra boenden</Button>
           </HeroActions>
         </HeroContent>
       </PageContainer>

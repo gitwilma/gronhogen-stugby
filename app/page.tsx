@@ -17,11 +17,11 @@ export default function HomePage() {
       <main>
         <HeroSection />
         <CottagesSection />
-        <CottageCarouselSection />
-        <GroupBookingSection />
-        <OtherAccommodationSection />
         <BookingSection />
-        <TipsSection />
+        <OtherAccommodationSection />
+        <GroupBookingSection />
+        <CottageCarouselSection />
+        {/* <TipsSection /> */}
         <InfoSection />
         <GallerySection />
         <Footer />

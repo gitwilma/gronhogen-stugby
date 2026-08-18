@@ -12,34 +12,11 @@ export const siteData = {
   },
 
   nearbyPlaces: [
-    {
-      name: "Långe Jan",
-      distance: "10 km",
-    },
-
-    {
-      name: "ICA",
-      distance: "10 km",
-    },
-
-    {
-      name: "Badplats",
-      distance: "10 km",
-    },
-
-    {
-      name: "Kalkbrottet",
-      distance: "10 km",
-    },
-
-    {
-      name: "Hyra cykel",
-      distance: "10 km",
-    },
-
-    {
-      name: "Glasscafé",
-      distance: "10 km",
-    },
+    "Långe Jan",
+    "Matbutik",
+    "Badplats",
+    "Kalkbrottet",
+    "Cykeluthyrning",
+    "Glasscafé",
   ],
 };

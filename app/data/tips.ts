@@ -1,10 +1,20 @@
+import {
+  Bike,
+  Binoculars,
+  Castle,
+  IceCream,
+  Mountain,
+  TowerControl,
+  type LucideIcon,
+} from "lucide-react";
+
 export type Tip = {
   id: string;
   title: string;
   description: string;
   imageSrc: string;
   imageAlt: string;
-  icon: string;
+  icon: LucideIcon;
 };
 
 export const tips: Tip[] = [
@@ -14,7 +24,7 @@ export const tips: Tip[] = [
     description: "Ölands södra udde och ett måste att uppleva, året runt.",
     imageSrc: "/assets/nature/lighthouse_01.webp", // CHANGE IMAGE
     imageAlt: "Långe Jan vid solnedgång",
-    icon: "♜",
+    icon: TowerControl,
   },
   {
     id: "eketorp",
@@ -22,7 +32,7 @@ export const tips: Tip[] = [
     description: "Spännande ringborg med fantastisk utsikt över landskapet.",
     imageSrc: "/assets/nature/nature_05.webp", // CHANGE IMAGE
     imageAlt: "Eketorps borg på södra Öland",
-    icon: "♞",
+    icon: Castle,
   },
   {
     id: "kalkbrottet",
@@ -31,7 +41,7 @@ export const tips: Tip[] = [
       "Ett turkost smycke mitt i stenen. Perfekt för ett dopp på sommaren.",
     imageSrc: "/assets/nature/nature_04.webp", // CHANGE IMAGE
     imageAlt: "Kalkbrottet på södra Öland",
-    icon: "▲",
+    icon: Mountain,
   },
   {
     id: "glasscafeet",
@@ -39,7 +49,7 @@ export const tips: Tip[] = [
     description: "Missa inte det populära glasscaféet i Degerhamn.",
     imageSrc: "/assets/nature/nature_03.webp", // CHANGE IMAGE
     imageAlt: "Glass i våffla",
-    icon: "✺",
+    icon: IceCream,
   },
   {
     id: "hyra-cykel",
@@ -48,7 +58,7 @@ export const tips: Tip[] = [
       "Utforska Öland på två hjul med frihet, natur och små äventyr.",
     imageSrc: "/assets/nature/nature_02.webp", // CHANGE IMAGE
     imageAlt: "Cykel vid havet",
-    icon: "●",
+    icon: Bike,
   },
   {
     id: "fagelskadning",
@@ -57,6 +67,6 @@ export const tips: Tip[] = [
       "Södra Öland är ett paradis för fåglar. Ta med kikaren och njut.",
     imageSrc: "/assets/nature/nature_01.webp", // CHANGE IMAGE
     imageAlt: "Kikare vid fågelskådningsplats",
-    icon: "◆",
+    icon: Binoculars,
   },
 ];

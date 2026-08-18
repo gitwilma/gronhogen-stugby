@@ -6,8 +6,6 @@ import {
   TipDescription,
   TipHeader,
   TipIcon,
-  TipImage,
-  TipImageWrapper,
   TipsEyebrow,
   TipsGrid,
   TipsTitle,
@@ -17,26 +15,31 @@ export const TipsSection = () => {
   return (
     <SectionContainer aria-labelledby="tips-title">
       <PageContainer>
-        <TipsEyebrow>Carlas tips</TipsEyebrow>
-        <TipsTitle id="tips-title">Upptäck södra Öland</TipsTitle>
+        <TipsEyebrow>Tips</TipsEyebrow>
+        <TipsTitle id="tips-title">Upptäck Södra Öland</TipsTitle>
 
         <TipsGrid>
-          {tips.map((tip) => (
-            <li key={tip.id}>
-              <TipCard aria-labelledby={`${tip.id}-title`}>
-                <TipImageWrapper>
-                  <TipImage src={tip.imageSrc} alt={tip.imageAlt} />
-                </TipImageWrapper>
+          {tips.map((tip) => {
+            const IconComponent = tip.icon;
+            return (
+              <li key={tip.id}>
+                <TipCard aria-labelledby={`${tip.id}-title`}>
+                  {/* <TipImageWrapper>
+                    <TipImage src={tip.imageSrc} alt={tip.imageAlt} />
+                  </TipImageWrapper> */}
 
-                <TipHeader>
-                  <TipIcon aria-hidden="true">{tip.icon}</TipIcon>
-                  <h3 id={`${tip.id}-title`}>{tip.title}</h3>
-                </TipHeader>
+                  <TipHeader>
+                    <TipIcon aria-hidden="true">
+                      <IconComponent size={20} strokeWidth={2} />
+                    </TipIcon>
+                    <h3 id={`${tip.id}-title`}>{tip.title}</h3>
+                  </TipHeader>
 
-                <TipDescription>{tip.description}</TipDescription>
-              </TipCard>
-            </li>
-          ))}
+                  <TipDescription>{tip.description}</TipDescription>
+                </TipCard>
+              </li>
+            );
+          })}
         </TipsGrid>
       </PageContainer>
     </SectionContainer>

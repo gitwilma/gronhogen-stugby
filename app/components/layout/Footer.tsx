@@ -15,7 +15,7 @@ import {
 
 const footerLinks = [
   { label: "Hem", href: "#hem" },
-  { label: "Våra stugor", href: "#stugor" },
+  { label: "Våra boenden", href: "#stugor" },
   { label: "Hitta hit", href: "#hitta-hit" },
   { label: "Kontakt", href: "#kontakt" },
 ];

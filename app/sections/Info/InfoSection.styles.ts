@@ -1,7 +1,7 @@
-import styled from "styled-components";
 import { colors } from "@/app/theme/colors";
 import { radius } from "@/app/theme/radius";
 import { spacing } from "@/app/theme/spacing";
+import styled from "styled-components";
 
 export const InfoGrid = styled.div`
   display: grid;
@@ -50,32 +50,102 @@ export const LocationAddress = styled.address`
   }
 `;
 
+export const NearbyTitle = styled.strong`
+  font-family: var(--font-body);
+  color: ${colors.text.primary};
+  margin-bottom: ${spacing.xxs};
+  display: block;
+`;
+
 export const NearbyList = styled.ul`
-  width: 100%;
   display: flex;
-  flex-direction: column;
-  gap: ${spacing.sm};
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
   margin: 0;
   padding: 0;
   list-style: none;
 `;
 
 export const NearbyItem = styled.li`
-  display: flex;
-  justify-content: space-between;
-  gap: ${spacing.md};
   font-family: var(--font-body);
   font-size: 15px;
   color: ${colors.text.secondary};
-
-  strong {
-    color: ${colors.text.secondary};
-  }
+  white-space: pre;
 `;
 
 export const MapWrapper = styled.div`
   width: 100%;
   min-height: 360px;
+  position: relative;
+`;
+
+export const MapPlaceholder = styled.div`
+  width: 100%;
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    ${colors.brand.secondary} 0%,
+    ${colors.state.disabled} 100%
+  );
+  border-radius: ${radius.lg};
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:focus-visible {
+    outline: 3px solid ${colors.focus.ring};
+    outline-offset: 4px;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: ${spacing.md};
+    color: ${colors.text.primary};
+    text-align: center;
+  }
+
+  svg {
+    width: 48px;
+    height: 48px;
+    opacity: 0.9;
+  }
+
+  p {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 500;
+    color: ${colors.text.primary};
+  }
+
+  @media (max-width: 768px) {
+    min-height: 300px;
+
+    svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+  }
 `;
 
 export const MapFrame = styled.iframe`
@@ -83,6 +153,7 @@ export const MapFrame = styled.iframe`
   min-height: 360px;
   display: block;
   border: 0;
+  border-radius: ${radius.lg};
 `;
 
 export const ContactPanel = styled.article`

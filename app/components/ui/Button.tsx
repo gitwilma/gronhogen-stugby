@@ -38,13 +38,15 @@ export const Button = (props: ButtonProps) => {
     const { href, external, target, rel, children, variant, ...linkProps } =
       props;
 
-    if (external) {
+    const isHashLink = href.startsWith("#");
+
+    if (external || isHashLink) {
       return (
         <StyledLinkButton
           href={href}
           $variant={variant ?? "primary"}
-          target="_blank"
-          rel="noopener noreferrer"
+          target={external ? "_blank" : target}
+          rel={external ? "noopener noreferrer" : rel}
           {...linkProps}
         >
           {children}

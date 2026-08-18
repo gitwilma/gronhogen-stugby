@@ -1,6 +1,11 @@
+"use client";
+
+import { PageContainer } from "@/app/components/layout/PageContainer";
+import { SectionContainer } from "@/app/components/layout/SectionContainer";
 import { Button } from "@/app/components/ui/Button";
 import { siteData } from "@/app/data/site";
 import Image from "next/image";
+import { useState } from "react";
 import {
   ContactImage,
   ContactItem,
@@ -12,15 +17,17 @@ import {
   LocationDetails,
   LocationIntro,
   MapFrame,
+  MapPlaceholder,
   MapWrapper,
   NearbyItem,
   NearbyList,
+  NearbyTitle,
   SectionTitle,
 } from "./InfoSection.styles";
-import { SectionContainer } from "@/app/components/layout/SectionContainer";
-import { PageContainer } from "@/app/components/layout/PageContainer";
 
 export const InfoSection = () => {
+  const [mapLoaded, setMapLoaded] = useState(false);
+
   return (
     <SectionContainer id="hitta-hit" aria-labelledby="location-title">
       <PageContainer>
@@ -40,23 +47,57 @@ export const InfoSection = () => {
               </span>
             </LocationAddress>
 
-            <NearbyList aria-label="Platser i närheten">
-              {siteData.nearbyPlaces.map((place) => (
-                <NearbyItem key={place.name}>
-                  <span>{place.name}</span>
-                  <strong>{place.distance}</strong>
-                </NearbyItem>
-              ))}
-            </NearbyList>
+            <div>
+              <NearbyTitle>I närheten</NearbyTitle>
+              <NearbyList aria-label="Platser i närheten">
+                {siteData.nearbyPlaces.map((place, index) => (
+                  <NearbyItem key={place}>
+                    {place}
+                    {index < siteData.nearbyPlaces.length - 1 ? " · " : ""}
+                  </NearbyItem>
+                ))}
+              </NearbyList>
+            </div>
           </LocationDetails>
 
           <MapWrapper aria-label="Karta till Grönhögens Stugby">
-            <MapFrame
-              title="Karta till Grönhögens Stugby"
-              src="https://www.google.com/maps?q=Gr%C3%B6nh%C3%B6gens%20Stugby%20Syr%C3%A9nv%C3%A4gen%202%20380%2065%20Degerhamn&output=embed"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+            {!mapLoaded ? (
+              <MapPlaceholder
+                onClick={() => setMapLoaded(true)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setMapLoaded(true);
+                  }
+                }}
+              >
+                <div>
+                  <svg
+                    width="48"
+                    height="48"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  <p>Klicka för att ladda karta</p>
+                </div>
+              </MapPlaceholder>
+            ) : (
+              <MapFrame
+                title="Karta till Grönhögens Stugby"
+                src="https://www.google.com/maps?q=Gr%C3%B6nh%C3%B6gens%20Stugby%20Syr%C3%A9nv%C3%A4gen%202%20380%2065%20Degerhamn&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            )}
           </MapWrapper>
 
           <ContactPanel id="kontakt" aria-labelledby="contact-title">

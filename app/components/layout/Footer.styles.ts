@@ -1,8 +1,7 @@
-import Link from "next/link";
-import styled from "styled-components";
 import { colors } from "@/app/theme/colors";
-import { spacing } from "@/app/theme/spacing";
 import { radius } from "@/app/theme/radius";
+import { spacing } from "@/app/theme/spacing";
+import styled from "styled-components";
 
 export const FooterWrapper = styled.footer`
   background-color: ${colors.background.elevated};
@@ -69,7 +68,7 @@ export const FooterLinks = styled.ul`
   list-style: none;
 `;
 
-export const FooterLink = styled(Link)`
+export const FooterLink = styled.a`
   font-family: var(--font-body);
   font-size: 15px;
   font-weight: 700;

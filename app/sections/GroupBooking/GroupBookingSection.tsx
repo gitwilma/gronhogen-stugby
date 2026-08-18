@@ -17,13 +17,13 @@ export const GroupBookingSection = () => {
         <GroupBookingCard>
           <GroupBookingContent>
             <GroupBookingTitle id="group-booking-title">
-              Abonnera hela stugbyn
+              Reser ni ett större sällskap?
             </GroupBookingTitle>
 
             <GroupBookingText>
-              Vill du samla familjen, vännerna eller kollegorna? Hyr hela
-              stugbyn med alla 11 stugor exklusivt för er. Perfekt för bröllop,
-              släktträffar, företagsevent eller andra speciella tillfällen.
+              Abonnera hela stugbyn eller boka flera stugor samtidigt. Skicka
+              ett mejl till oss med era önskemål, så hjälper vi er att hitta den
+              lösning som passar er bäst.
             </GroupBookingText>
 
             <ContactList aria-label="Kontakt för abonnemang">
