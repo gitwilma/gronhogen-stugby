@@ -48,6 +48,7 @@ export const GallerySection = () => {
                 alt={image.alt}
                 fill
                 sizes="(max-width: 900px) 50vw, 20vw"
+                style={{ aspectRatio: "4/3" }}
               />
             </GalleryImageItem>
           ))}

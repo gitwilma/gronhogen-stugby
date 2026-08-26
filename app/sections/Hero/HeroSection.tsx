@@ -22,6 +22,7 @@ export const HeroSection = () => {
           fill
           priority
           sizes="100vw"
+          style={{ aspectRatio: "16/9" }}
         />
       </HeroMedia>
 

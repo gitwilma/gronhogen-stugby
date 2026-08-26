@@ -30,6 +30,7 @@ export const CottageCard = ({ cottage }: CottageCardProps) => {
             alt={cottage.imageAlt}
             fill
             sizes="(max-width: 560px) 100vw, (max-width: 800px) 50vw, (max-width: 1200px) 33vw, 20vw"
+            style={{ aspectRatio: "4/3" }}
           />
 
           <CottageCardImageOverlay aria-hidden="true">

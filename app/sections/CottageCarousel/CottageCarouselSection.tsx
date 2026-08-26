@@ -127,6 +127,7 @@ export const CottageCarouselSection = () => {
                               ? "(max-width: 900px) 100vw, 62vw"
                               : "(max-width: 900px) 0vw, 26vw"
                           }
+                          style={{ aspectRatio: "16/9" }}
                         />
                       </CarouselImageFrame>
                     </CarouselButton>
@@ -148,6 +149,7 @@ export const CottageCarouselSection = () => {
                 alt={slide.alt}
                 fill
                 sizes="(max-width:560px) 100vw, 50vw"
+                style={{ aspectRatio: "4/3" }}
               />
             </CarouselGridItem>
           ))}

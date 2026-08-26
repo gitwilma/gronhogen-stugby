@@ -137,6 +137,7 @@ export const InfoSection = () => {
                 alt="Natur i närheten av Grönhögens Stugby på södra Öland"
                 fill
                 sizes="(max-width: 1100px) 100vw, 320px"
+                style={{ aspectRatio: "4/3" }}
               />
             </ContactImage>
           </ContactPanel>
