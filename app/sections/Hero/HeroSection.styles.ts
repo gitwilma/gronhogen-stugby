@@ -64,6 +64,22 @@ export const HeroTitle = styled.h1`
   font-weight: 600;
   line-height: 0.95;
   color: ${colors.text.inverse};
+
+  br {
+    display: inline;
+  }
+
+  @media (max-width: 584px) {
+    br {
+      display: none;
+    }
+  }
+
+  @media (max-width: 433px) {
+    br {
+      display: inline;
+    }
+  }
 `;
 
 export const HeroIntro = styled.p`

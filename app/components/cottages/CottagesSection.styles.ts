@@ -1,7 +1,7 @@
-import styled from "styled-components";
 import { colors } from "@/app/theme/colors";
 import { radius } from "@/app/theme/radius";
 import { spacing } from "@/app/theme/spacing";
+import styled from "styled-components";
 
 export const CottagesHeader = styled.header`
   max-width: 680px;
@@ -126,7 +126,7 @@ export const CottagesCarouselButton = styled.button`
   }
 `;
 
-export const CottagesList = styled.ul`
+export const CottagesList = styled.ul<{ $collapsed?: boolean }>`
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: calc((100% - (${spacing.lg} * 4)) / 5);
@@ -162,6 +162,36 @@ export const CottagesList = styled.ul`
     grid-auto-columns: auto;
     grid-template-columns: 1fr;
     overflow-x: visible;
+
+    /* If collapsed on mobile, show a subtle peek of remaining items and add stronger fade */
+    ${(props) =>
+      props.$collapsed
+        ? `
+      position: relative;
+      overflow: hidden;
+
+      > li:nth-child(n+3) {
+        /* Keep the items in the flow but visually deemphasise them */
+        opacity: 0.18;
+        transform: translateY(6px);
+        filter: grayscale(15%);
+        pointer-events: none;
+        transition: opacity 220ms ease, transform 220ms ease;
+      }
+
+      /* Stronger fade that matches the page background */
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 6rem;
+        background: linear-gradient(180deg, rgba(253,249,246,0) 0%, rgba(253,249,246,0.98) 100%);
+        pointer-events: none;
+      }
+    `
+        : ""}
   }
 `;
 
@@ -186,4 +216,19 @@ export const CottagesPaginationDot = styled.span<{
     $active ? colors.brand.primary : colors.border.default};
 
   transition: all 250ms ease;
+`;
+
+export const MobileShowMore = styled.button`
+  display: none;
+  margin: ${spacing.md} auto 0;
+  background: none;
+  border: 0;
+  color: ${colors.brand.primary};
+  font-family: var(--font-body);
+  font-weight: 700;
+  cursor: pointer;
+
+  @media (max-width: 560px) {
+    display: block;
+  }
 `;

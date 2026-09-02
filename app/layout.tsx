@@ -16,7 +16,14 @@ const ptSans = PT_Sans({
 
 export const metadata: Metadata = {
   title: "Grönhögens Stugby",
-  description: "Stugor på södra Öland nära natur, hav och upplevelser.",
+  description: "Boenden på södra Öland nära natur, hav och upplevelser.",
+  icons: {
+    icon: [
+      { url: "/assets/gronhogen-favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/assets/gronhogen-favicon.svg",
+    apple: "/assets/gronhogen-favicon.svg",
+  },
 };
 
 export default function RootLayout({

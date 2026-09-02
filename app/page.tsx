@@ -2,6 +2,7 @@ import { CottagesSection } from "./components/cottages/CottagesSection";
 import { Footer } from "./components/layout/Footer";
 import { Header } from "./components/layout/Header";
 import { BookingSection } from "./sections/Booking/BookingSection";
+import { CampingSection } from "./sections/Camping/CampingSection";
 import { CottageCarouselSection } from "./sections/CottageCarousel/CottageCarouselSection";
 import { GallerySection } from "./sections/Gallery/GallerySection";
 import { GroupBookingSection } from "./sections/GroupBooking/GroupBookingSection";
@@ -17,10 +18,11 @@ export default function HomePage() {
       <main>
         <HeroSection />
         <CottagesSection />
-        <BookingSection />
-        <OtherAccommodationSection />
         <GroupBookingSection />
+        <OtherAccommodationSection />
+        <BookingSection />
         <CottageCarouselSection />
+        <CampingSection />
         {/* <TipsSection /> */}
         <InfoSection />
         <GallerySection />

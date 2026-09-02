@@ -30,15 +30,16 @@ export const HeroSection = () => {
 
       <PageContainer>
         <HeroContent>
-          <HeroEyebrow>På södra Öland</HeroEyebrow>
+          <HeroEyebrow>Grönhögens Uthyrning</HeroEyebrow>
 
           <HeroTitle id="hero-title">
-            Bo nära naturen, havet och äventyren.
+            Bo nära naturen och havet på <br />södra Öland
           </HeroTitle>
 
           <HeroIntro>
-            Grönhögens stugby består av 11 mysiga stugor med närhet till vackra
-            stränder, Långe Jan, golf, cykelleder och mycket mer.
+            Hos Grönhögens Uthyrning hittar du stugor, lägenhet och camping på
+            södra Öland, med närhet till hav, natur, Långe Jan, golf och
+            cykelleder.
           </HeroIntro>
 
           <HeroActions aria-label="Snabblänkar">

@@ -1,14 +1,17 @@
 import { PageContainer } from "@/app/components/layout/PageContainer";
 import { SectionContainer } from "@/app/components/layout/SectionContainer";
 import { siteData } from "@/app/data/site";
+import Image from "next/image";
 import {
   FooterBottom,
   FooterBrand,
+  FooterBrandHeader,
   FooterContent,
   FooterDivider,
   FooterInfo,
   FooterLink,
   FooterLinks,
+  FooterLogo,
   FooterText,
   FooterWrapper,
 } from "./Footer.styles";
@@ -27,10 +30,28 @@ export const Footer = () => {
         <PageContainer>
           <FooterContent>
             <FooterBrand>
-              <h2 id="footer-title">Grönhögens Stugby</h2>
+              <FooterBrandHeader>
+                <FooterLogo
+                  href="#hem"
+                  aria-label="Grönhögens Uthyrning - Gå till startsidan"
+                >
+                  <Image
+                    src="/assets/gronhogen-logo-primary1.svg"
+                    alt="Grönhögens Uthyrning logotyp"
+                    width={200}
+                    height={200}
+                  />
+                </FooterLogo>
+
+                <h2 id="footer-title">
+                  Grönhögens
+                  <br />
+                  Uthyrning
+                </h2>
+              </FooterBrandHeader>
 
               <FooterText>
-                En naturnära stugby på södra Öland med närhet till hav,
+                Naturnära boenden på södra Öland med närhet till hav,
                 naturupplevelser och några av öns mest uppskattade utflyktsmål.
               </FooterText>
             </FooterBrand>

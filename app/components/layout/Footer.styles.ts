@@ -32,6 +32,34 @@ export const FooterBrand = styled.section`
   }
 `;
 
+export const FooterBrandHeader = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${spacing.md};
+  margin-bottom: ${spacing.md};
+`;
+
+export const FooterLogo = styled.a`
+  display: inline-block;
+  flex-shrink: 0;
+  text-decoration: none;
+  transition: opacity 200ms ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus-visible {
+    outline: 3px solid ${colors.focus.ring};
+    outline-offset: 4px;
+    border-radius: ${radius.xs};
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+`;
+
 export const FooterInfo = styled.address`
   font-style: normal;
 `;

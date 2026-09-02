@@ -41,10 +41,10 @@ export const Header = () => {
         <NavInner>
           <LogoLink href="#hem" aria-label="Gå till startsidan">
             <Image
-              src="/assets/gronhogen-logo5.svg"
+              src="/assets/gronhogen-logo-secondary.svg"
               alt="Grönhögens Stugby logotyp"
-              width={100}
-              height={100}
+              width={200}
+              height={200}
               priority
             />
           </LogoLink>

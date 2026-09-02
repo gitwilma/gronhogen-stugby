@@ -36,7 +36,7 @@ export const InfoSection = () => {
             <SectionTitle id="location-title">Hitta hit</SectionTitle>
 
             <LocationIntro>
-              Grönhögens Stugby ligger på södra Öland, nära havet och naturen.
+              Grönhögens Uthyrning ligger på södra Öland, nära havet och naturen.
             </LocationIntro>
 
             <LocationAddress>
