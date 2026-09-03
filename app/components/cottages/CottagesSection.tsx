@@ -4,6 +4,7 @@ import { CottageCard } from "@/app/components/cottages/CottageCard";
 import { PageContainer } from "@/app/components/layout/PageContainer";
 import { SectionContainer } from "@/app/components/layout/SectionContainer";
 import { cottages } from "@/app/data/cottages";
+import { siteData } from "@/app/data/site";
 import { spacing } from "@/app/theme/spacing";
 import { useEffect, useRef, useState } from "react";
 import {
@@ -131,6 +132,11 @@ export const CottagesSection = () => {
           <CottagesIntro>
             Upptäck våra 11 stugor och hitta det boende som passar dig bäst.
             Alla bokningar sker enkelt och tryggt via Airbnb.
+          </CottagesIntro>
+
+          <CottagesIntro>
+            <strong>Adress:</strong> {siteData.address.street},{" "}
+            {siteData.address.postalCode} {siteData.address.city}
           </CottagesIntro>
         </CottagesHeader>
 

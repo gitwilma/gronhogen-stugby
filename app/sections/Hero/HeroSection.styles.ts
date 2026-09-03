@@ -69,6 +69,12 @@ export const HeroTitle = styled.h1`
     display: inline;
   }
 
+  @media (max-width: 997px) {
+    br {
+      display: none;
+    }
+  }
+
   @media (max-width: 584px) {
     br {
       display: none;

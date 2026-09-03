@@ -78,7 +78,7 @@ export const CampingTitle = styled.p`
 `;
 
 export const CampingDescription = styled.p`
-  margin: 0;
+  margin: 0 0 ${spacing.sm} 0;
   font-family: var(--font-body);
   font-size: 15px;
   color: ${colors.text.secondary};

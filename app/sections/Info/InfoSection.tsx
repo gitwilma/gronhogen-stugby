@@ -4,6 +4,7 @@ import { PageContainer } from "@/app/components/layout/PageContainer";
 import { SectionContainer } from "@/app/components/layout/SectionContainer";
 import { Button } from "@/app/components/ui/Button";
 import { siteData } from "@/app/data/site";
+import { BookOpen } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import {
@@ -12,6 +13,10 @@ import {
   ContactList,
   ContactPanel,
   ContactText,
+  GuideLink,
+  GuideText,
+  GuideTitle,
+  GuideWrapper,
   InfoGrid,
   LocationAddress,
   LocationDetails,
@@ -36,7 +41,8 @@ export const InfoSection = () => {
             <SectionTitle id="location-title">Hitta hit</SectionTitle>
 
             <LocationIntro>
-              Grönhögens Uthyrning ligger på södra Öland, nära havet och naturen.
+              Grönhögens Uthyrning ligger på södra Öland, nära havet och
+              naturen.
             </LocationIntro>
 
             <LocationAddress>
@@ -47,17 +53,43 @@ export const InfoSection = () => {
               </span>
             </LocationAddress>
 
-            <div>
-              <NearbyTitle>I närheten</NearbyTitle>
-              <NearbyList aria-label="Platser i närheten">
-                {siteData.nearbyPlaces.map((place, index) => (
-                  <NearbyItem key={place}>
-                    {place}
-                    {index < siteData.nearbyPlaces.length - 1 ? " · " : ""}
-                  </NearbyItem>
-                ))}
-              </NearbyList>
-            </div>
+            <LocationAddress>
+              <strong>Nybovallens Camping</strong>
+              <span>Grönhögen 143</span>
+              <span>380 65 Degerhamn</span>
+            </LocationAddress>
+
+            <GuideWrapper>
+              <BookOpen size={20} strokeWidth={1.8} aria-hidden="true" />
+
+              <div>
+                <GuideTitle>Vår guide till södra Öland</GuideTitle>
+
+                <GuideText>
+                  Upptäck våra tips på sevärdheter, restauranger och andra
+                  favoriter i närheten.
+                </GuideText>
+
+                <GuideLink
+                  href="https://www.airbnb.se/s/guidebooks?refinement_paths[]=/guidebooks/3466130"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Se vår guide <span aria-hidden="true">→</span>
+                </GuideLink>
+
+                <NearbyTitle style={{ marginTop: 12 }}>I närheten</NearbyTitle>
+
+                <NearbyList aria-label="Platser i närheten">
+                  {siteData.nearbyPlaces.map((place, index) => (
+                    <NearbyItem key={place}>
+                      {place}
+                      {index < siteData.nearbyPlaces.length - 1 ? " · " : ""}
+                    </NearbyItem>
+                  ))}
+                </NearbyList>
+              </div>
+            </GuideWrapper>
           </LocationDetails>
 
           <MapWrapper aria-label="Karta till Grönhögens Stugby">
@@ -87,7 +119,7 @@ export const InfoSection = () => {
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                     <circle cx="12" cy="10" r="3" />
                   </svg>
-                  <p>Klicka för att ladda karta</p>
+                  <p>Klicka för att ladda karta - Grönhögens Stugby</p>
                 </div>
               </MapPlaceholder>
             ) : (

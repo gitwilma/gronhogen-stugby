@@ -52,6 +52,8 @@ export const LocationAddress = styled.address`
 
 export const NearbyTitle = styled.strong`
   font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
   color: ${colors.text.primary};
   margin-bottom: ${spacing.xxs};
   display: block;
@@ -69,9 +71,89 @@ export const NearbyList = styled.ul`
 
 export const NearbyItem = styled.li`
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: 14px;
+  line-height: 1.55;
   color: ${colors.text.secondary};
   white-space: pre;
+`;
+
+export const GuideWrapper = styled.aside`
+  display: flex;
+  align-items: flex-start;
+  gap: ${spacing.sm};
+
+  margin-top: ${spacing.xl};
+  padding-top: ${spacing.lg};
+  border-top: 1px solid ${colors.border.default};
+
+  color: ${colors.text.secondary};
+
+  > svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: ${colors.brand.primary};
+  }
+`;
+
+export const GuideTitle = styled.strong`
+  display: block;
+  margin-bottom: ${spacing.xxs};
+
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  color: ${colors.text.primary};
+`;
+
+export const GuideText = styled.p`
+  margin: 0 0 ${spacing.xs};
+
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.55;
+  color: ${colors.text.secondary};
+`;
+
+export const GuideLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+
+  color: ${colors.brand.primary};
+  text-decoration: none;
+
+  span {
+    transition: transform 180ms ease;
+  }
+
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+    span {
+      transform: translateX(3px);
+    }
+  }
+
+  &:focus-visible {
+    outline: 3px solid ${colors.focus.ring};
+    outline-offset: 4px;
+    border-radius: ${radius.xs};
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    span {
+      transition: none;
+    }
+
+    &:hover span {
+      transform: none;
+    }
+  }
 `;
 
 export const MapWrapper = styled.div`
