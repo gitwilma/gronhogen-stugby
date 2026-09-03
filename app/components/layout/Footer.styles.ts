@@ -58,6 +58,10 @@ export const FooterLogo = styled.a`
   @media (prefers-reduced-motion: reduce) {
     transition: none;
   }
+
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;
 
 export const FooterInfo = styled.address`

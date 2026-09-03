@@ -33,11 +33,10 @@ export const Footer = () => {
               <FooterBrandHeader>
                 <FooterLogo
                   href="#hem"
-                  aria-label="Grönhögens Uthyrning - Gå till startsidan"
                 >
                   <Image
                     src="/assets/gronhogen-logo-primary1.svg"
-                    alt="Grönhögens Uthyrning logotyp"
+                    alt="Grönhögens Uthyrning - Gå till startsidan"
                     width={200}
                     height={200}
                   />

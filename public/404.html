@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sidan kunde inte hittas — 404</title>
+    <meta name="robots" content="noindex" />
+    <style>
+      :root {
+        --background-base: #fdf9f6;
+        --surface: #ffffff;
+        --elevated: #f4ebe0;
+        --subtle: #ddd6c8;
+
+        --text-primary: #000000;
+        --text-secondary: #4d433d;
+        --inverse: #ffffff;
+
+        --brand-primary: #6f7b63;
+        --brand-primary-hover: #5f6b54;
+        --brand-accent: #7a96a8;
+
+        --border-default: #ddd6c8;
+        --focus-ring: #7a96a8;
+
+        --font-heading:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+        --font-body:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        font-family: var(--font-body);
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: var(--background-base);
+        color: var(--text-primary);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .container {
+        max-width: 820px;
+        padding: 48px;
+        text-align: center;
+        background: var(--surface);
+        border: 1px solid var(--border-default);
+        border-radius: 12px;
+        box-shadow: 0 6px 24px rgba(16, 24, 40, 0.06);
+      }
+
+      img {
+        max-width: 200px;
+        height: auto;
+        margin-bottom: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      h1 {
+        font-family: var(--font-heading);
+        font-size: 32px;
+        line-height: 1.2;
+        margin: 8px 0 12px;
+        color: var(--text-secondary);
+        font-weight: 500;
+      }
+
+      p {
+        margin: 0 0 18px;
+        color: var(--text-secondary);
+        font-size: 16px;
+        line-height: 1.7;
+      }
+
+      a.button {
+        display: inline-block;
+        padding: 12px 18px;
+        background: var(--brand-primary);
+        color: var(--inverse);
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: background 150ms ease;
+      }
+
+      a.button:hover {
+        background: var(--brand-primary-hover);
+      }
+
+      a.link {
+        color: var(--brand-accent);
+        text-decoration: none;
+      }
+
+      small {
+        color: var(--text-secondary);
+      }
+
+      @media (max-width: 520px) {
+        .container {
+          padding: 28px;
+          border-radius: 10px;
+        }
+        h1 {
+          font-size: 24px;
+        }
+        p {
+          font-size: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container" role="main" aria-labelledby="title">
+      <a href="/" aria-label="Gå till startsidan"
+        ><img
+          src="/assets/gronhogen-logo-secondary.svg"
+          alt="Grönhögens Uthyrning logotyp"
+      /></a>
+      <h1 id="title">404 — Sidan kunde inte hittas</h1>
+      <p>
+        Det ser ut som sidan du försöker nå inte finns eller har flyttats.
+        Kontrollera webbadressen eller gå tillbaka till startsidan.
+      </p>
+      <p><a class="button" href="/">Gå till startsidan</a></p>
+      <p>
+        <small
+          >Behöver du hjälp?
+          <a class="link" href="mailto:info@example.com"
+            >info@gronhogensstugby.se</a
+          ></small
+        >
+      </p>
+    </main>
+  </body>
+</html>
