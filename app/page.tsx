@@ -9,7 +9,7 @@ import { GroupBookingSection } from "./sections/GroupBooking/GroupBookingSection
 import { HeroSection } from "./sections/Hero/HeroSection";
 import { InfoSection } from "./sections/Info/InfoSection";
 import { OtherAccommodationSection } from "./sections/OtherAccommodationSection/OtherAccommodationSection";
-import { TipsSection } from "./sections/Tips/TipsSection";
+// import { TipsSection } from "./sections/Tips/TipsSection";
 
 export default function HomePage() {
   return (

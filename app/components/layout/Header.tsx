@@ -46,6 +46,7 @@ export const Header = () => {
               width={200}
               height={200}
               priority
+              style={{ height: 64, width: "auto" }}
             />
           </LogoLink>
 

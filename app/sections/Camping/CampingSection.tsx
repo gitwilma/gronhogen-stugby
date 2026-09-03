@@ -1,5 +1,4 @@
 import { PageContainer } from "@/app/components/layout/PageContainer";
-import { SectionContainer } from "@/app/components/layout/SectionContainer";
 import { siteData } from "@/app/data/site";
 import {
   CampingCard,

@@ -86,7 +86,7 @@ export const Footer = () => {
           <FooterDivider />
 
           <FooterBottom>
-            <span>© {new Date().getFullYear()} Grönhögens Stugby</span>
+            <span>© {new Date().getFullYear()} Grönhögens Uthyrning</span>
             <span>Webbplats av Wilma Håkansson</span>
           </FooterBottom>
         </PageContainer>
