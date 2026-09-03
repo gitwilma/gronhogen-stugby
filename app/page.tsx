@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { CottagesSection } from "./components/cottages/CottagesSection";
 import { Footer } from "./components/layout/Footer";
 import { Header } from "./components/layout/Header";
@@ -10,6 +11,13 @@ import { HeroSection } from "./sections/Hero/HeroSection";
 import { InfoSection } from "./sections/Info/InfoSection";
 import { OtherAccommodationSection } from "./sections/OtherAccommodationSection/OtherAccommodationSection";
 // import { TipsSection } from "./sections/Tips/TipsSection";
+
+export const metadata: Metadata = {
+  title: "Grönhögens Uthyrning — Stugor i Grönhögen, södra Öland",
+  description:
+    "Stugor och boenden i Grönhögen på södra Öland. Hyr mysiga stugor nära hav, naturupplevelser och populära utflyktsmål — boka direkt hos Grönhögens Uthyrning.",
+  alternates: { canonical: "https://gronhogensuthyrning.se/" },
+};
 
 export default function HomePage() {
   return (

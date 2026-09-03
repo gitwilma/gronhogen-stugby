@@ -1,0 +1,7 @@
+# robots.txt for Grönhögens Stugby
+# Allow all crawlers; sitemap points to production domain
+User-agent: *
+Allow: /
+
+Sitemap: https://gronhogensuthyrning.se/sitemap.xml
+# If you want to block staging environments, add Disallow rules here
