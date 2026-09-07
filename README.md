@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Grönhögens Uthyrning
 
-## Getting Started
+Officiell webbplats för **Grönhögens Uthyrning** i Grönhögen på södra Öland.
 
-First, run the development server:
+Webbplatsen presenterar Grönhögens Stugby, Fasanhörnet och Nybovallens Camping samt information om bokning, kontakt och närområdet.
+
+**Webbplats:** https://gronhogensuthyrning.se
+
+## Teknik
+
+Projektet är byggt med:
+
+- Next.js 16
+- React 19
+- TypeScript
+- styled-components
+- Lucide React
+
+Webbplatsen använder Next.js App Router och exporteras som en statisk webbplats för hosting hos Loopia.
+
+## Kom igång
+
+Installera dependencies:
+
+```bash
+npm install
+```
+
+Starta utvecklingsservern:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Webbplatsen finns därefter på:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Produktion
 
-## Learn More
+Kontrollera projektet innan deployment:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run lint
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Next.js genererar den färdiga statiska webbplatsen i:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```text
+out/
+```
 
-## Deploy on Vercel
+Testa produktionsversionen lokalt med:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npx serve out
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+Webbplatsen hostas hos **Loopia** och deployas via FTP.
+
+Ladda upp **innehållet** i `out/` till:
+
+```text
+/gronhogensuthyrning.se/public_html/
+```
+
+Exempel:
+
+```text
+out/index.html   → public_html/index.html
+out/_next/       → public_html/_next/
+out/assets/      → public_html/assets/
+```
+
+Ladda inte upp själva `out`-mappen till `public_html`.
+
+## SEO
+
+Webbplatsen är konfigurerad med:
+
+- Metadata och canonical URL
+- Open Graph
+- Sitemap
+- robots.txt
+- Favicon
+- Semantisk HTML
+
+Huvuddomän:
+
+```text
+https://gronhogensuthyrning.se
+```
+
+Sitemap:
+
+```text
+https://gronhogensuthyrning.se/sitemap.xml
+```
+
+## Kontakt
+
+**Grönhögens Uthyrning**  
+info@gronhogensuthyrning.se
+
+## Licens
+
+Projektet är utvecklat för Grönhögens Uthyrning. Källkod, bilder och grafiskt material får inte återanvändas eller distribueras utan tillstånd.
