@@ -3,7 +3,7 @@ export const siteData = {
 
   phone: "0703 876 262",
 
-  email: "info@gronhogensstugby.se",
+  email: "info@gronhogensuthyrning.se",
 
   address: {
     street: "Syrénvägen 2",

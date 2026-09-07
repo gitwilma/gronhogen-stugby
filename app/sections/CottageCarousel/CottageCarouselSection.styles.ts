@@ -9,7 +9,7 @@ type SlidePosition = "previous" | "active" | "next";
 export const Carousel = styled.div`
   position: relative;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1300px) {
     display: none;
   }
 `;
@@ -18,7 +18,7 @@ export const CarouselViewport = styled.div`
   overflow: hidden;
   margin-inline: calc(${spacing.xxl} * -1);
 
-  @media (max-width: 900px) {
+  @media (max-width: 1300px) {
     margin-inline: 0;
   }
 `;
@@ -33,7 +33,7 @@ export const CarouselTrack = styled.ul`
   padding: 0;
   list-style: none;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1300px) {
     grid-template-columns: 1fr;
   }
 `;
@@ -56,7 +56,7 @@ export const CarouselSlide = styled.li<{ $position: SlidePosition }>`
     opacity 400ms ease,
     transform 400ms ease;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1300px) {
     display: ${({ $position }) => ($position === "active" ? "block" : "none")};
     transform: none;
     opacity: 1;
@@ -101,7 +101,7 @@ export const CarouselImageFrame = styled.figure`
   border-radius: ${radius.xl};
   background-color: ${colors.background.subtle};
 
-  @media (max-width: 900px) {
+  @media (max-width: 1300px) {
     aspect-ratio: 4 / 3;
   }
 `;
@@ -171,7 +171,7 @@ export const CarouselStatus = styled.p`
 export const CarouselGrid = styled.div`
   display: none;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1300px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: ${spacing.md};

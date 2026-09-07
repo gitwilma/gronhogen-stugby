@@ -50,7 +50,7 @@ export const Footer = () => {
               </FooterBrandHeader>
 
               <FooterText>
-                Naturnära boenden på södra Öland med närhet till hav,
+                Boenden på södra Öland med närhet till hav,
                 naturupplevelser och några av öns mest uppskattade utflyktsmål.
               </FooterText>
             </FooterBrand>
