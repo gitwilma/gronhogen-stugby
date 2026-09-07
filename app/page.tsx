@@ -13,9 +13,9 @@ import { OtherAccommodationSection } from "./sections/OtherAccommodationSection/
 // import { TipsSection } from "./sections/Tips/TipsSection";
 
 export const metadata: Metadata = {
-  title: "Grönhögens Uthyrning — Stugor i Grönhögen, södra Öland",
+  title: "Boende i Grönhögen på södra Öland | Grönhögens Uthyrning",
   description:
-    "Stugor och boenden i Grönhögen på södra Öland. Hyr mysiga stugor nära hav, naturupplevelser och populära utflyktsmål — boka direkt hos Grönhögens Uthyrning.",
+    "Stugor och boenden i Grönhögen på södra Öland. Hyr mysiga stugor nära hav, naturupplevelser och populära utflyktsmål.",
   alternates: { canonical: "https://gronhogensuthyrning.se/" },
 };
 

@@ -16,24 +16,42 @@ const ptSans = PT_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://gronhogensuthyrning.se"),
-  title: { default: "Grönhögens Stugby", template: "%s — Grönhögens Stugby" },
-  description: "Boenden på södra Öland nära natur, hav och upplevelser.",
-  alternates: { canonical: "https://gronhogensuthyrning.se" },
+
+  title: {
+    default: "Grönhögens Uthyrning | Grönhögens Stugby på södra Öland",
+    template: "%s | Grönhögens Uthyrning",
+  },
+
+  description:
+    "Grönhögens Uthyrning erbjuder boende i Grönhögen på södra Öland, inklusive Grönhögens Stugby med 11 stugor, lägenhet och camping nära hav, natur och utflyktsmål.",
+
+  alternates: {
+    canonical: "/",
+  },
 
   openGraph: {
-    title: "Grönhögens Stugby",
-    description: "Boenden på södra Öland nära natur, hav och upplevelser.",
-    url: "https://gronhogensuthyrning.se",
-    siteName: "Grönhögens Stugby",
+    title: "Grönhögens Uthyrning | Grönhögens Stugby på södra Öland",
+    description:
+      "Boende i Grönhögen på södra Öland. Grönhögens Stugby med 11 stugor, lägenhet och camping nära hav, natur och upplevelser.",
+    url: "/",
+    siteName: "Grönhögens Uthyrning",
+    locale: "sv_SE",
     type: "website",
     images: [
       {
-        url: "https://gronhogensuthyrning.se/assets/gronhogen-og-image.jpeg",
+        url: "/assets/gronhogen-og-image.jpeg",
         width: 1200,
         height: 630,
-        alt: "Grönhögens Stugby",
+        alt: "Grönhögens Uthyrning och Grönhögens Stugby på södra Öland",
       },
     ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Grönhögens Uthyrning | Grönhögens Stugby",
+    description: "Stugor, lägenhet och camping i Grönhögen på södra Öland.",
+    images: ["/assets/gronhogen-og-image.jpeg"],
   },
 
   robots: {
@@ -42,9 +60,14 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon: [{ url: "/assets/gronhogen-favicon.svg", type: "image/svg+xml" }],
+    icon: [
+      {
+        url: "/assets/gronhogen-favicon.svg",
+        type: "image/svg+xml",
+      },
+    ],
     shortcut: "/assets/gronhogen-favicon.svg",
-    apple: "/assets/gronhogen-favicon.svg",
+    apple: "/assets/gronhogen-apple-touch-icon.png",
   },
 };
 
