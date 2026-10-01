@@ -3,6 +3,7 @@
 import { CottageCard } from "@/app/components/cottages/CottageCard";
 import { PageContainer } from "@/app/components/layout/PageContainer";
 import { SectionContainer } from "@/app/components/layout/SectionContainer";
+import SirvoyModal from "@/app/components/sirvoy/SirvoyModal";
 import { cottages } from "@/app/data/cottages";
 import { siteData } from "@/app/data/site";
 import { spacing } from "@/app/theme/spacing";
@@ -79,7 +80,6 @@ export const CottagesSection = () => {
     };
   }, []);
 
-  // Compute mobile collapsed max-height so 2.5 items are visible (half of 3rd)
   useEffect(() => {
     const computeMobileMaxHeight = () => {
       if (!listRef.current) return setMobileMaxHeight(null);
@@ -91,7 +91,6 @@ export const CottagesSection = () => {
       const cardHeight = first.getBoundingClientRect().height;
       const gap = Number.parseFloat(spacing.lg) || 24;
 
-      // Show two full cards + half of the third
       const maxHeight = Math.round((cardHeight + gap) * 2 + cardHeight / 2);
       setMobileMaxHeight(maxHeight);
     };
@@ -138,6 +137,10 @@ export const CottagesSection = () => {
             <strong>Adress:</strong> {siteData.address.street},{" "}
             {siteData.address.postalCode} {siteData.address.city}
           </CottagesIntro>
+
+          <div style={{ marginTop: 12 }}>
+            <SirvoyModal formId="8fdd2002f20749b4" buttonLabel="Boka direkt" />
+          </div>
         </CottagesHeader>
 
         <CottagesCarouselHeader>
